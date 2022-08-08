@@ -2038,9 +2038,9 @@ const core = __nccwpck_require__(186);
 const fs = __nccwpck_require__(147);
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const path = './../newfiles/';
+        const path = './';
         const fileName = core.getInput('Name');
-        fs.writeFile(path + fileName, 'Hello content!', function (err) {
+        fs.writeFile(path + fileName + '.txt', 'Hello content!', function (err) {
             if (err)
                 throw err;
             console.log('Saved!');
