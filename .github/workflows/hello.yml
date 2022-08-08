@@ -16,5 +16,4 @@ jobs:
       - name: Run my action
         uses: ./
         with:
-          name: 'This Dot Labs'
           ghToken: ${{ secrets.GITHUB_TOKEN }}
