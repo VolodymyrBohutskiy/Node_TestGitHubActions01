@@ -6,6 +6,6 @@ runs:
   main: dist/index.js
 
 inputs:
-  Name:
-    description: Who to greet
-    required: true
+  ghToken:
+    description: 'Github access token'
+    required: false

@@ -1,12 +1,9 @@
 name: Hello
 
 on:
-  workflow_dispatch:
-    inputs:
-      Name:
-        description: Who to greet
-        required: true
-        default: 'GitHub Actions'
+  push:
+    branches:
+      - main
 
 jobs:
   Hello:
@@ -16,7 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Hello
+      - name: Run my action
         uses: ./
         with:
-          Name: ${{ github.event.inputs.Name }}
+          name: 'This Dot Labs'
+          ghToken: ${{ secrets.GITHUB_TOKEN }}
