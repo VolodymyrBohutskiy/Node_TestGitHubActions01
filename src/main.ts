@@ -1,8 +1,13 @@
-import * as core from '@actions/core'
+import * as core from '@actions/core';
+import * as fs from "fs"; 
 
 async function main() {
-  const name = core.getInput('Name');
-  core.info(`Hello, ${name}!!!`);
+  const path = './../newfiles/'
+  const fileName = core.getInput('Name');
+  fs.writeFile(path + fileName, 'Hello content!', function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+  })
 }
 
 main();

@@ -2035,10 +2035,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __nccwpck_require__(186);
+const fs = __nccwpck_require__(147);
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const name = core.getInput('Name');
-        core.info(`Hello, ${name}!!!`);
+        const path = './../newfiles/';
+        const fileName = core.getInput('Name');
+        fs.writeFile(path + fileName, 'Hello content!', function (err) {
+            if (err)
+                throw err;
+            console.log('Saved!');
+        });
     });
 }
 main();
